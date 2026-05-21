@@ -61,147 +61,12 @@
       flex-direction: column;
     }
 
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      height: 60px;
-      padding: 0 20px;
-      background: var(--blue);
-      color: #fff;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 220px;
-    }
-
-    .mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      display: grid;
-      place-items: center;
-      background: rgba(255, 255, 255, .18);
-      border: 1px solid rgba(255, 255, 255, .45);
-      color: #fff;
-      font-weight: 700;
-      font-size: 12px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 22px;
-      line-height: 1.25;
-      color: #fff;
-    }
-
-    .account-box {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 2px;
-      color: #fff;
-      line-height: 1.25;
-    }
-
-    .account-tenant {
-      font-size: 18px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .account-user {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .account-user::before {
-      content: "♙";
-      font-size: 16px;
-      line-height: 1;
-    }
-
-    .app-body {
-      min-height: 100vh;
-      display: flex;
-      padding-top: 60px;
-      background: var(--bg);
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 60px;
-      bottom: 0;
-      left: 0;
-      width: 248px;
-      overflow: auto;
-      background: #fff;
-      border-right: 1px solid var(--line);
-    }
-
-    .menu {
-      padding: 14px 0;
-    }
-
-    .menu-section {
-      margin: 14px 0 6px;
-      padding: 0 24px;
-      color: #5f6b7a;
-      font-size: 13px;
-    }
-
-    .menu-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      height: 40px;
-      padding: 0 24px;
-      color: #1f2733;
-    }
-
-    .menu-item.active {
-      color: var(--blue);
-      background: #eef3ff;
-      border-right: 3px solid var(--blue);
-    }
-
-    .menu-child {
-      height: 36px;
-      padding-left: 44px;
-      font-size: 14px;
-    }
-
     .content {
       width: 100%;
-      margin-left: 248px;
       padding: 24px 24px 28px;
       display: grid;
       align-content: start;
       gap: 12px;
-    }
-
-    .breadcrumb {
-      color: #6b7280;
-      font-size: 14px;
-      padding: 4px 0 14px;
-    }
-
-    .breadcrumb strong {
-      color: #1f2733;
-      font-weight: 600;
     }
 
     .notice {
@@ -597,68 +462,17 @@
     }
 
     @media (max-width: 720px) {
-      .topbar {
-        position: static;
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 12px;
-        height: auto;
-      }
-      .app-body { padding-top: 0; }
-      .sidebar { display: none; }
-      .content { margin-left: 0; padding: 12px; }
+      .content { padding: 12px; }
       .filter-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
       .span-2, .span-3, .span-4, .span-5, .span-6, .span-7 { grid-column: span 6; }
       .dimension-field, .filter-actions { grid-column: span 6; }
       .filter-actions button { flex: 1 1 96px; }
-      .account-box { align-items: flex-start; }
-      .brand { min-width: 0; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <header class="topbar">
-      <div class="brand">
-        <div class="mark">商</div>
-        <div>
-          <h1>商家管理端</h1>
-        </div>
-      </div>
-      <div class="account-box">
-        <div class="account-tenant" id="tenantPill">马可波罗（奥博）</div>
-        <div class="account-user">白友良测试账号</div>
-      </div>
-    </header>
-
-    <div class="app-body">
-      <aside class="sidebar" aria-label="后台菜单">
-        <nav class="menu">
-          <div class="menu-item">⌂ 首页</div>
-          <div class="menu-section">客户列表</div>
-          <div class="menu-item menu-child">线索列表</div>
-          <div class="menu-item menu-child active">派单列表</div>
-          <div class="menu-section">营销设置</div>
-          <div class="menu-item">◴ 渠道管理</div>
-          <div class="menu-item">◴ 分单规则配置</div>
-          <div class="menu-item">C端营销广告配置</div>
-          <div class="menu-item">常见问题</div>
-          <div class="menu-item">皮肤设置</div>
-          <div class="menu-item">扫码引导</div>
-          <div class="menu-section">流程管理</div>
-          <div class="menu-item">推荐流程模版</div>
-          <div class="menu-item">我的流程模版</div>
-          <div class="menu-section">人员管理</div>
-          <div class="menu-item">人员管理</div>
-          <div class="menu-item">岗位管理</div>
-          <div class="menu-item">门店管理</div>
-          <div class="menu-item">经销商管理</div>
-          <div class="menu-item">权限管理</div>
-        </nav>
-      </aside>
-
     <main class="content">
-      <div class="breadcrumb">客户列表 / <strong>派单列表</strong></div>
       <div class="notice" id="tenantNotice"></div>
 
       <section class="filters" aria-label="筛选条件">
@@ -742,7 +556,6 @@
         </div>
       </section>
     </main>
-    </div>
   </div>
 
   <script>
@@ -1187,7 +1000,6 @@
       const tenantId = params.get('tenantId') || TENANT_ID;
       const allowed = tenantId === TENANT_ID;
       const notice = document.getElementById('tenantNotice');
-      document.getElementById('tenantPill').textContent = tenantId === TENANT_ID ? TENANT_NAME : '未配置租户';
       notice.style.display = allowed ? 'none' : 'block';
       notice.textContent = `当前一期仅支持租户 ${TENANT_ID}（${TENANT_NAME}），URL 中传入的 ${tenantId} 暂无报表数据。`;
       return allowed;
